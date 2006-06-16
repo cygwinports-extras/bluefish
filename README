@@ -1,0 +1,190 @@
+bluefish
+-------------------------------------------
+This is the Bluefish HTML editor.
+
+It has (among others) the following major features:
+
+  Customizable syntax highlighting based on Perl Compatible regular expressions,
+  Multiple encodings support
+  Wizards for startup, tables, frames, and others
+  Dialogs for many HTML tags, with all their attributes
+  User-customizable toolbar for quick access to often used functions
+  A custom menu, specify your own tags or sets of code, and define your own dialogs
+  Custom search and replace pattern support for the Custom menu
+  Function reference browser, including reference files for PHP and HTML
+  User customizable integration of many programs, including weblint, tidy, make
+
+Runtime requirements:
+  cygwin-1.5.18-1
+  GConf2-2.8.1-1
+  ORBit2-2.12.4-1
+  atk-runtime-1.9.1-1
+  expat-1.95.8-1
+  glib2-runtime-2.6.5-1
+  gnome-keyring-0.4.3-1
+  gnome-vfs2-2.8.4-1
+  gtk2-x11-runtime-2.6.8-1
+  libXft2-2.1.6-1
+  libart_lgpl2-2.3.16-1
+  libaspell15-0.50.3-1
+  libaudiofile0-0.2.6-2
+  libbonobo20-2.8.0-1
+  libbonoboui2-2.8.0-1
+  libesound0-0.2.36-1
+  libfontconfig1-2.2.2-1
+  libfreetype26-2.1.9-1
+  libgnome2-2.8.0-1
+  libgnomecanvas2-2.10.2-1
+  libgnomeui2-2.8.1-1
+  libiconv2-1.9.2-1
+  libintl3-0.14.1-1
+  libjpeg62-6b-11
+  libpcre0-6.3-1
+  libpopt0-1.6.4-4
+  libxml2-2.6.20-3
+  minires-1.00-1
+  pango-runtime-1.8.1-1
+  xorg-x11-bin-dlls-6.8.2.0-1
+  zlib-1.2.3-1
+
+Build requirements:
+  cygwin-1.5.18-1
+  binutils-20050610-1
+  gawk-3.1.5-1
+  gcc-core-3.4.4-1
+  intltool-0.33-1
+  make-3.80-1
+  pkgconfig-0.17.2-2
+  scrollkeeper-0.3.14-2
+  sed-4.1.4-1
+
+  GConf2-2.8.1-1
+  ORBit2-devel-2.12.4-1
+  aspell-dev-0.50.3-1
+  atk-devel-1.9.1-1
+  expat-1.95.8-1
+  gettext-0.14.1-1
+  glib2-devel-2.6.5-1
+  gnome-keyring-0.4.3-1
+  gnome-vfs2-2.8.4-1
+  gtk2-x11-devel-2.6.8-1
+  jpeg-6b-11
+  libXft-devel-2.1.6-1
+  libart_lgpl2-2.3.16-1
+  libaudiofile-devel-0.2.6-2
+  libbonobo2-devel-2.8.0-1
+  libbonoboui2-2.8.0-1
+  libesound-devel-0.2.36-1
+  libfontconfig-devel-2.2.2-1
+  libfreetype2-devel-2.1.9-1
+  libgnome2-2.8.0-1
+  libgnomecanvas2-2.10.2-1
+  libgnomeui2-2.8.1-1
+  libiconv-1.9.2-1
+  libxml2-devel-2.6.20-3
+  minires-devel-1.00-1
+  pango-devel-1.8.1-1
+  pcre-devel-6.3-1
+  popt-1.6.4-4
+  xorg-x11-devel-6.8.2.0-1
+  zlib-1.2.3-1
+
+Canonical homepage:
+  http://bluefish.openoffice.nl/
+
+Canonical download:
+  http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/
+
+-------------------------------------------
+
+Build instructions:
+  unpack bluefish-1.0.4-1-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  ./bluefish-1.0.4-1.sh all
+
+This will create:
+  /usr/src/bluefish-1.0.4-1-src.tar.bz2
+  /usr/src/bluefish-1.0.4-1.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /etc/postinstall/bluefish.sh
+  /usr/bin/bluefish.exe
+  /usr/share/application-registry/bluefish.applications
+  /usr/share/applications/bluefish-project.desktop
+  /usr/share/applications/bluefish.desktop
+  /usr/share/bluefish/bluefish_splash.png
+  /usr/share/bluefish/custom_menu.de.default
+  /usr/share/bluefish/custom_menu.default
+  /usr/share/bluefish/custom_menu.fr.default
+  /usr/share/bluefish/encodings.default
+  /usr/share/bluefish/filetypes.default
+  /usr/share/bluefish/funcref_css.xml
+  /usr/share/bluefish/funcref_html.xml
+  /usr/share/bluefish/funcref_php.xml
+  /usr/share/bluefish/funcref_python.xml
+  /usr/share/bluefish/highlighting.default
+  /usr/share/bluefish/icon_c.png
+  /usr/share/bluefish/icon_cfml.png
+  /usr/share/bluefish/icon_dir.png
+  /usr/share/bluefish/icon_html.png
+  /usr/share/bluefish/icon_image.png
+  /usr/share/bluefish/icon_java.png
+  /usr/share/bluefish/icon_pascal.png
+  /usr/share/bluefish/icon_php.png
+  /usr/share/bluefish/icon_python.png
+  /usr/share/bluefish/icon_r.png
+  /usr/share/bluefish/icon_unknown.png
+  /usr/share/bluefish/icon_xml.png
+  /usr/share/doc/bluefish-1.0.4/AUTHORS
+  /usr/share/doc/bluefish-1.0.4/ChangeLog
+  /usr/share/doc/bluefish-1.0.4/COPYING
+  /usr/share/doc/bluefish-1.0.4/INSTALL
+  /usr/share/doc/bluefish-1.0.4/NEWS
+  /usr/share/doc/bluefish-1.0.4/README
+  /usr/share/doc/bluefish-1.0.4/TODO
+  /usr/share/doc/Cygwin/bluefish-1.0.4.README
+  /usr/share/locale/bg/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/cs/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/da/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/de/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/es/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/fi/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/fr/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/hu/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/it/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/ja/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/no/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/pl/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/pt/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/ru/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/sr/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/sv/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/ta/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/tr/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/bluefish.mo
+  /usr/share/locale/zh_TW/LC_MESSAGES/bluefish.mo
+  /usr/share/mime/packages/bluefish.xml
+  /usr/share/mime-info/bluefish.keys
+  /usr/share/mime-info/bluefish.mime
+  /usr/share/pixmaps/bluefish-icon.png
+  /usr/share/pixmaps/gnome-application-bluefish-project.png
+
+------------------
+
+Port Notes:
+
+----- version 1.0.4-1 -----
+Version bump.
+
+----- version 1.0-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
