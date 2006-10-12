@@ -1,6 +1,6 @@
 category: Gnome Editors
-requires: cygwin libaspell15 libgnomeui2 libiconv2 libintl3 libpcre0
-sdesc: "GNOME HTML editor"
+requires: cygwin gtk2-x11 libaspell15 libgnomeui2 libpcre0
+sdesc: "GNOME HTML and programming editor"
 ldesc: "This is the Bluefish HTML editor.
 
 It has (among others) the following major features
