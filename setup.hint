@@ -1,5 +1,5 @@
 category: Gnome Editors
-requires: cygwin gtk2-x11 libaspell15 libgnomeui2 libpcre0
+requires: cygwin glib2 gdk-pixbuf2 gnome-vfs2 gtk2-x11 libaspell15 libgnomeui2 libintl8 libpcre0 pango
 sdesc: "GNOME HTML and programming editor"
 ldesc: "This is the Bluefish HTML editor.
 

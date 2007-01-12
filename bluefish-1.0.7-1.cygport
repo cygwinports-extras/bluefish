@@ -1,0 +1,14 @@
+inherit gnome2
+
+DESCRIPTION="GTK web designer and programming editor"
+HOMEPAGE="http://bluefish.openoffice.nl/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+#	mirror://sourceforge/${PN}/${PN}-doc-html-chunked-${PV_MAJ_MIN}-${PVP[2]}.tar.bz2"
+
+src_compile() {
+	cd ${S}
+	NO_AUTOHEADER=1 NO_AUTOMAKE=1 gnome2_autoreconf
+	lndirs
+	cd ${B}
+	gnome2_compile --disable-update-databases
+}

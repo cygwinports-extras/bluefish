@@ -15,25 +15,29 @@ It has (among others) the following major features:
   User customizable integration of many programs, including weblint, tidy, make
 
 Runtime requirements:
-  cygwin-1.5.21-2
+  cygwin-1.5.23-2
+  gdk-pixbuf2-2.10.7-1
+  glib2-2.12.7-1
+  gnome-vfs2-2.16.2-1
+  gtk2-x11-2.10.7-1
   libaspell15-0.50.3-1
-  glib2-2.10.3-1
-  gtk2-x11-2.8.20-1
-  libgnomeui2-2.14.1-1
-  libpopt0-1.10.4-1
+  libgnomeui2-2.16.1-1
+  libintl8-0.15-1
+  libpcre0-6.7-1
+  pango-1.14.9-1
 
 Build requirements:
 (besides corresponding devel packages)
-  cygwin-1.5.21-2
-  autoconf2.5-2.59-2
-  binutils-20060709-1
-  cygport-0.2.5-1
-  gawk-3.1.5-2
-  gcc-core-3.4.4-1
-  intltool-0.35.0-1
+  cygwin-1.5.23-2
+  autoconf2.5-2.61-1
+  binutils-20060817-1
+  cygport-0.2.8-1
+  gawk-3.1.5-4
+  gcc-core-3.4.4-3
+  intltool-0.35.2-1
   make-3.81-1
-  pkg-config-0.20-1
-  sed-4.1.5-1
+  pkg-config-0.21-1
+  sed-4.1.5-2
 
 Canonical homepage:
   http://bluefish.openoffice.nl/
@@ -44,15 +48,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack bluefish-1.0.6-X-src.tar.bz2
+  unpack bluefish-1.0.7-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./bluefish-1.0.6-X.cygport all
+  cygport ./bluefish-1.0.7-X.cygport all
 
 This will create:
-  /usr/src/bluefish-1.0.6-X-src.tar.bz2
-  /usr/src/bluefish-1.0.6-X.tar.bz2
+  /usr/src/bluefish-1.0.7-X-src.tar.bz2
+  /usr/src/bluefish-1.0.7-X.tar.bz2
 
 -------------------------------------------
 
@@ -86,14 +90,14 @@ Files included in the binary package:
   /usr/share/bluefish/icon_r.png
   /usr/share/bluefish/icon_unknown.png
   /usr/share/bluefish/icon_xml.png
-  /usr/share/doc/Cygwin/bluefish-1.0.6.README
-  /usr/share/doc/bluefish-1.0.6/AUTHORS
-  /usr/share/doc/bluefish-1.0.6/COPYING
-  /usr/share/doc/bluefish-1.0.6/ChangeLog
-  /usr/share/doc/bluefish-1.0.6/INSTALL
-  /usr/share/doc/bluefish-1.0.6/NEWS
-  /usr/share/doc/bluefish-1.0.6/README
-  /usr/share/doc/bluefish-1.0.6/TODO
+  /usr/share/doc/Cygwin/bluefish-1.0.7.README
+  /usr/share/doc/bluefish-1.0.7/AUTHORS
+  /usr/share/doc/bluefish-1.0.7/COPYING
+  /usr/share/doc/bluefish-1.0.7/ChangeLog
+  /usr/share/doc/bluefish-1.0.7/INSTALL
+  /usr/share/doc/bluefish-1.0.7/NEWS
+  /usr/share/doc/bluefish-1.0.7/README
+  /usr/share/doc/bluefish-1.0.7/TODO
   /usr/share/locale/bg/LC_MESSAGES/bluefish.mo
   /usr/share/locale/cs/LC_MESSAGES/bluefish.mo
   /usr/share/locale/da/LC_MESSAGES/bluefish.mo
@@ -127,6 +131,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 1.0.7-1 -----
+Version bump.
 
 ----- version 1.0.6-1 -----
 Version bump, built with cygport.
