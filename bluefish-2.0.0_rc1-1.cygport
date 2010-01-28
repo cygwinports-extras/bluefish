@@ -1,0 +1,10 @@
+inherit gnome2
+
+DESCRIPTION="GTK web designer and programming editor"
+HOMEPAGE="http://bluefish.openoffice.nl/"
+SRC_URI="mirror://sourceforge/${PN}/${P/_/-}.tar.bz2"
+SRC_DIR=${P/_/-}
+
+PATCH_URI="2.0.0-no-undefined.patch"
+
+CYGCONF_ARGS="--disable-update-databases --disable-xml-catalog-update"

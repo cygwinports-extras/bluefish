@@ -1,0 +1,143 @@
+--- origsrc/bluefish-2.0.0-rc1/configure.ac	2009-12-16 20:11:30.000000000 -0600
++++ src/bluefish-2.0.0-rc1/configure.ac	2010-01-27 12:52:04.493348200 -0600
+@@ -88,7 +88,7 @@ if test "$CC" = "gcc" ; then
+ fi
+ 
+ case "$host_os" in
+-	windows* | cygwin* | mingw*)
++	windows* | mingw*)
+ 		AC_DEFINE([WIN32], [1], [Define to 1 if you have a Cygwin/Windows OS.])
+ 		LIBS="$LIBS -lintl.dll"
+ 		AC_MSG_NOTICE([platform is... Windows/Cygwin])
+@@ -100,7 +100,12 @@ case "$host_os" in
+ esac
+ 
+ case "$host" in
+-	*-*-mingw* | *cygwin* | *windows*)
++	*-*-cygwin*)
++		platform_win32=yes
++		native_win32=no
++	;;		
++	*-*-mingw* | *windows*)
++		platform_win32=yes
+ 		native_win32=yes
+ 	;;		
+ 	*-apple-darwin*)
+@@ -108,6 +113,7 @@ case "$host" in
+ 		AC_MSG_NOTICE([platform is... MacOSX])
+ 	;;
+ 	*)
++		platform_win32=no
+ 		native_win32=no
+ 	;;
+ esac
+@@ -120,6 +126,7 @@ fi
+ AC_PROG_SED
+ AC_SUBST([SPLIT_VERSION], [`echo $VERSION | $SED -e 's/\./,/g'`])
+ fi
++AM_CONDITIONAL([PLATFORM_WIN32], [test "x$platform_win32" = "xyes"])
+ AM_CONDITIONAL([OS_WIN32], [test "x$native_win32" = "xyes"])
+ 
+ dnl ************************
+--- origsrc/bluefish-2.0.0-rc1/src/Makefile.am	2009-12-16 20:11:29.000000000 -0600
++++ src/bluefish-2.0.0-rc1/src/Makefile.am	2010-01-27 17:41:33.259784800 -0600
+@@ -1,7 +1,7 @@
+ 
+ AUTOMAKE_OPTIONS = std-options
+ 
+-SUBDIRS = pixmaps plugin_about plugin_entities plugin_htmlbar plugin_infbrowser plugin_snippets plugin_charmap
++SUBDIRS = pixmaps . plugin_about plugin_entities plugin_htmlbar plugin_infbrowser plugin_snippets plugin_charmap
+ 
+ EXTRA_DIST = bluefish_rc.rc.in resource.h
+ 
+@@ -9,8 +9,11 @@ MAINTAINERCLEANFILES = Makefile.in confi
+ 
+ DEFS += -DLOCALEDIR=\"$(localedir)\" -DPKGDATADIR=\"$(pkgdatadir)\" -DPKGLIBDIR=\"$(pkglibdir)\"
+ 
++if PLATFORM_WIN32
++AM_LDFLAGS = -Wl,--export-all-symbols,--out-implib,bluefish.exe.a
++endif
++
+ if OS_WIN32
+-AM_LDFLAGS = -export-all-symbols
+ DEFS += -DEXE_EXPORT_SYMBOLS
+ LDADD = -lws2_32
+ LDADD += bluefish_rc.o
+--- origsrc/bluefish-2.0.0-rc1/src/plugin_about/Makefile.am	2009-11-19 20:11:21.000000000 -0600
++++ src/bluefish-2.0.0-rc1/src/plugin_about/Makefile.am	2010-01-27 17:33:32.187269100 -0600
+@@ -21,8 +21,8 @@ about_la_SOURCES = \
+ 
+ about_la_LDFLAGS = -module -avoid-version
+ 
+-if OS_WIN32
+-about_la_LDFLAGS += -no-undefined -export-symbols $(srcdir)/about.def
++if PLATFORM_WIN32
++about_la_LDFLAGS += -no-undefined -Wl,../bluefish.exe.a
+ endif
+ 
+ about_rev.h: about_rev.h.tmp
+--- origsrc/bluefish-2.0.0-rc1/src/plugin_charmap/Makefile.am	2009-11-19 20:11:21.000000000 -0600
++++ src/bluefish-2.0.0-rc1/src/plugin_charmap/Makefile.am	2010-01-27 17:33:37.987600800 -0600
+@@ -21,8 +21,8 @@ charmap_la_CFLAGS = $(CHARMAP_PLUGIN_CFL
+ charmap_la_LIBADD = $(CHARMAP_PLUGIN_LIBS)
+ charmap_la_LDFLAGS = -module -avoid-version
+ 
+-if OS_WIN32
+-charmap_la_LDFLAGS += -no-undefined -export-symbols $(srcdir)/charmap.def
++if PLATFORM_WIN32
++charmap_la_LDFLAGS += -no-undefined -Wl,../bluefish.exe.a
+ endif
+ 
+ maintainer-clean-local:
+--- origsrc/bluefish-2.0.0-rc1/src/plugin_entities/Makefile.am	2009-11-19 20:11:21.000000000 -0600
++++ src/bluefish-2.0.0-rc1/src/plugin_entities/Makefile.am	2010-01-27 17:33:44.350964800 -0600
+@@ -16,8 +16,8 @@ entities_la_SOURCES = \
+ 
+ entities_la_LDFLAGS = -module -avoid-version
+ 
+-if OS_WIN32
+-entities_la_LDFLAGS += -no-undefined -export-symbols $(srcdir)/entities.def
++if PLATFORM_WIN32
++entities_la_LDFLAGS += -no-undefined -Wl,../bluefish.exe.a
+ endif
+ 
+ maintainer-clean-local:
+--- origsrc/bluefish-2.0.0-rc1/src/plugin_htmlbar/Makefile.am	2009-11-19 20:11:21.000000000 -0600
++++ src/bluefish-2.0.0-rc1/src/plugin_htmlbar/Makefile.am	2010-01-27 17:33:48.787218500 -0600
+@@ -40,8 +40,8 @@ htmlbar_la_SOURCES = \
+ 
+ htmlbar_la_LDFLAGS = -module -avoid-version
+ 
+-if OS_WIN32
+-htmlbar_la_LDFLAGS += -no-undefined -export-symbols $(srcdir)/htmlbar.def
++if PLATFORM_WIN32
++htmlbar_la_LDFLAGS += -no-undefined -Wl,../bluefish.exe.a
+ endif
+ 
+ maintainer-clean-local:
+--- origsrc/bluefish-2.0.0-rc1/src/plugin_infbrowser/Makefile.am	2009-11-19 20:11:22.000000000 -0600
++++ src/bluefish-2.0.0-rc1/src/plugin_infbrowser/Makefile.am	2010-01-27 17:33:54.964571800 -0600
+@@ -30,8 +30,8 @@ infbrowser_la_SOURCES = \
+ 
+ infbrowser_la_LDFLAGS = -module -avoid-version
+ 
+-if OS_WIN32
+-infbrowser_la_LDFLAGS += -no-undefined -export-symbols $(srcdir)/infbrowser.def
++if PLATFORM_WIN32
++infbrowser_la_LDFLAGS += -no-undefined -Wl,../bluefish.exe.a
+ endif
+ 
+ maintainer-clean-local:
+--- origsrc/bluefish-2.0.0-rc1/src/plugin_snippets/Makefile.am	2009-11-19 20:11:21.000000000 -0600
++++ src/bluefish-2.0.0-rc1/src/plugin_snippets/Makefile.am	2010-01-27 17:34:02.525004300 -0600
+@@ -28,8 +28,8 @@ snippets_la_SOURCES = \
+ 
+ snippets_la_LDFLAGS = -module -avoid-version
+ 
+-if OS_WIN32
+-snippets_la_LDFLAGS += -no-undefined -export-symbols $(srcdir)/snippets.def
++if PLATFORM_WIN32
++snippets_la_LDFLAGS += -no-undefined -Wl,../bluefish.exe.a
+ endif
+ 
+ maintainer-clean-local:

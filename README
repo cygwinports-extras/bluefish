@@ -15,134 +15,59 @@ It has (among others) the following major features:
   User customizable integration of many programs, including weblint, tidy, make
 
 Runtime requirements:
-  cygwin-1.5.23-2
-  gdk-pixbuf2-2.10.7-1
-  glib2-2.12.7-1
-  gnome-vfs2-2.16.2-1
-  gtk2-x11-2.10.7-1
-  libaspell15-0.50.3-1
-  libgnomeui2-2.16.1-1
-  libintl8-0.15-1
-  libpcre0-6.7-1
-  pango-1.14.9-1
+  cygwin-1.7.1-1
+  libcairo2-1.8.8-1
+  libenchant1-1.5.0-1
+  libgcc1-4.3.4-3
+  libgdk_pixbuf2.0_0-2.18.6-1
+  libglib2.0_0-2.22.4-1
+  libgtk2.0_0-2.18.6-1
+  libgucharmap7-2.28.1-1
+  libintl8-0.17-11
+  libpango1.0_0-1.26.2-1
+  libpcre0-8.00-1
+  libxml2-2.7.6-1
 
 Build requirements:
 (besides corresponding devel packages)
-  cygwin-1.5.23-2
-  autoconf2.5-2.61-1
-  binutils-20060817-1
-  cygport-0.2.8-1
-  gawk-3.1.5-4
-  gcc-core-3.4.4-3
-  intltool-0.35.2-1
-  make-3.81-1
-  pkg-config-0.21-1
+  autoconf2.5-2.65-1
+  automake1.10-1.10.3-1
+  binutils-2.19.51-1
+  cygport-0.9.80-1
+  gawk-3.1.7-1
+  gcc4-core-4.3.4-3
+  gettext-devel-0.17-11
+  gnome-common-2.28.0-1
+  intltool-0.40.6-1
+  make-3.81-2
+  pkg-config-0.23b-10
   sed-4.1.5-2
 
 Canonical homepage:
   http://bluefish.openoffice.nl/
 
 Canonical download:
-  http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/
+  http://sourceforge.net/projects/bluefish/files/
 
 -------------------------------------------
 
 Build instructions:
-  unpack bluefish-1.0.7-X-src.tar.bz2
+  unpack bluefish-2.0.0_rc1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./bluefish-1.0.7-X.cygport all
+  cygport ./bluefish-2.0.0_rc1-X.cygport all
 
 This will create:
-  /usr/src/bluefish-1.0.7-X-src.tar.bz2
-  /usr/src/bluefish-1.0.7-X.tar.bz2
+  /usr/src/bluefish-2.0.0_rc1-X-src.tar.bz2
+  /usr/src/bluefish-2.0.0_rc1-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary package:
-
-  /etc/postinstall/bluefish.sh
-  /usr/bin/bluefish.exe
-  /usr/share/application-registry/bluefish.applications
-  /usr/share/applications/bluefish-project.desktop
-  /usr/share/applications/bluefish.desktop
-  /usr/share/bluefish/bluefish_splash.png
-  /usr/share/bluefish/custom_menu.de.default
-  /usr/share/bluefish/custom_menu.default
-  /usr/share/bluefish/custom_menu.fr.default
-  /usr/share/bluefish/encodings.default
-  /usr/share/bluefish/filetypes.default
-  /usr/share/bluefish/funcref_css.xml
-  /usr/share/bluefish/funcref_html.xml
-  /usr/share/bluefish/funcref_php.xml
-  /usr/share/bluefish/funcref_python.xml
-  /usr/share/bluefish/highlighting.default
-  /usr/share/bluefish/icon_c.png
-  /usr/share/bluefish/icon_cfml.png
-  /usr/share/bluefish/icon_dir.png
-  /usr/share/bluefish/icon_html.png
-  /usr/share/bluefish/icon_image.png
-  /usr/share/bluefish/icon_java.png
-  /usr/share/bluefish/icon_pascal.png
-  /usr/share/bluefish/icon_php.png
-  /usr/share/bluefish/icon_python.png
-  /usr/share/bluefish/icon_r.png
-  /usr/share/bluefish/icon_unknown.png
-  /usr/share/bluefish/icon_xml.png
-  /usr/share/doc/Cygwin/bluefish-1.0.7.README
-  /usr/share/doc/bluefish-1.0.7/AUTHORS
-  /usr/share/doc/bluefish-1.0.7/COPYING
-  /usr/share/doc/bluefish-1.0.7/ChangeLog
-  /usr/share/doc/bluefish-1.0.7/INSTALL
-  /usr/share/doc/bluefish-1.0.7/NEWS
-  /usr/share/doc/bluefish-1.0.7/README
-  /usr/share/doc/bluefish-1.0.7/TODO
-  /usr/share/locale/bg/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/cs/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/da/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/de/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/es/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/eu/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/fi/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/fr/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/hu/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/it/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/ja/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/no/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/pl/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/pt/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/pt_BR/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/ru/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/sk/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/sr/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/sv/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/ta/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/tr/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/zh_CN/LC_MESSAGES/bluefish.mo
-  /usr/share/locale/zh_TW/LC_MESSAGES/bluefish.mo
-  /usr/share/man/man1/bluefish.1.gz
-  /usr/share/mime-info/bluefish.keys
-  /usr/share/mime-info/bluefish.mime
-  /usr/share/mime/packages/bluefish.xml
-  /usr/share/pixmaps/bluefish-icon.png
-  /usr/share/pixmaps/gnome-application-bluefish-project.png
-
-------------------
-
 Port Notes:
 
------ version 1.0.7-1 -----
-Version bump.
-
------ version 1.0.6-1 -----
-Version bump, built with cygport.
-
------ version 1.0.4-1 -----
-Version bump.
-
------ version 1.0-1 -----
-Initial release for Cygwin.
+----- version 2.0.0_rc1-1 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:
