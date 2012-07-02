@@ -140,3 +140,16 @@
  endif
  
  maintainer-clean-local:
+--- origsrc/bluefish-2.2.3/src/plugin_zencoding/Makefile.am	2011-12-05 20:11:28.000000000 -0600
++++ src/bluefish-2.2.3/src/plugin_zencoding/Makefile.am	2012-07-02 08:30:55.439235800 -0500
+@@ -58,8 +58,8 @@ zencoding_la_SOURCES = \
+ 
+ zencoding_la_LDFLAGS = -module -avoid-version
+ 
+-if OS_WIN32
+-zencoding_la_LDFLAGS += -no-undefined -export-symbols $(srcdir)/zencoding.def
++if PLATFORM_WIN32
++zencoding_la_LDFLAGS += -no-undefined -Wl,../bluefish.exe.a
+ endif
+ 
+ maintainer-clean-local:
