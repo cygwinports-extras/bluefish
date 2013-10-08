@@ -1,5 +1,7 @@
+inherit python
+
 NAME="bluefish"
-VERSION=2.2.3
+VERSION=2.2.4
 RELEASE=1
 CATEGORY="Editors"
 SUMMARY="GNOME HTML and programming editor"
