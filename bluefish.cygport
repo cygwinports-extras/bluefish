@@ -1,0 +1,14 @@
+NAME="bluefish"
+VERSION=2.2.3
+RELEASE=1
+CATEGORY="Editors"
+SUMMARY="GNOME HTML and programming editor"
+DESCRIPTION="Bluefish is a powerful editor targeted towards programmers and
+web developers, with many options to write websites, scripts and programming
+code. Bluefish supports many programming and markup languages."
+HOMEPAGE="http://bluefish.openoffice.nl/"
+SRC_URI="http://www.bennewitz.com/bluefish/stable/source/${NAME}-${VERSION}.tar.bz2"
+PATCH_URI="2.2.0-no-undefined.patch"
+
+CYGCONF_ARGS="--disable-update-databases --disable-xml-catalog-update"
+MAKEOPTS+=" GETTEXT_MACRO_VERSION=0.18"

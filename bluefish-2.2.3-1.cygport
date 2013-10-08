@@ -1,7 +1,0 @@
-DESCRIPTION="GTK web designer and programming editor"
-HOMEPAGE="http://bluefish.openoffice.nl/"
-SRC_URI="http://www.bennewitz.com/bluefish/stable/source/${P}.tar.bz2"
-PATCH_URI="2.2.0-no-undefined.patch"
-
-CYGCONF_ARGS="--disable-update-databases --disable-xml-catalog-update"
-MAKEOPTS+=" GETTEXT_MACRO_VERSION=0.18"
